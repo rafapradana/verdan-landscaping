@@ -1,0 +1,7 @@
+{
+  "name": "Verdan Landscaping Co.",
+  "description": "High-conversion landscaping website for Verdan Landscaping Co., a modern Brooklyn-based landscaping firm focusing on urban outdoor spaces.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
