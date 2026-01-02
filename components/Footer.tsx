@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BUSINESS_NAME } from '../constants';
+import { BUSINESS_NAME, BUSINESS_AREA } from '../constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Modern landscaping for Brooklyn's urban spaces. Reliable, aesthetic, and low-maintenance.
+              Modern landscaping for {BUSINESS_AREA}'s urban spaces. Reliable, aesthetic, and low-maintenance.
             </p>
             <div className="flex gap-4">
               {['ig', 'fb', 'tw'].map(s => (
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
               <li>Williamsburg</li>
               <li>Bushwick</li>
               <li>Park Slope</li>
-              <li>Downtown Brooklyn</li>
+              <li>Downtown {BUSINESS_AREA}</li>
               <li>Red Hook & Greenpoint</li>
             </ul>
           </div>
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                Brooklyn, New York
+                {BUSINESS_AREA}, New York
               </p>
             </div>
           </div>

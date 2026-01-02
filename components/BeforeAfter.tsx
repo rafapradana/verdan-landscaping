@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { BUSINESS_AREA } from '../constants';
 
 // Slider component for Before/After comparison
 const Slider: React.FC<{ before: string; after: string; caption: string }> = ({ before, after, caption }) => {
@@ -14,19 +15,19 @@ const Slider: React.FC<{ before: string; after: string; caption: string }> = ({ 
 
   return (
     <div className="space-y-4">
-      <div 
+      <div
         className="relative aspect-[4/3] rounded-[32px] overflow-hidden cursor-ew-resize shadow-xl border border-slate-100 group"
         onMouseMove={handleMove}
         onTouchMove={handleMove}
       >
         <img src={after} className="absolute inset-0 w-full h-full object-cover" alt="After" />
-        <div 
-          className="absolute inset-0 w-full h-full overflow-hidden" 
+        <div
+          className="absolute inset-0 w-full h-full overflow-hidden"
           style={{ width: `${sliderPos}%` }}
         >
           <img src={before} className="absolute inset-0 w-full h-full object-cover max-w-none" style={{ width: '100vw' }} alt="Before" />
         </div>
-        <div 
+        <div
           className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.3)] pointer-events-none"
           style={{ left: `${sliderPos}%` }}
         >
@@ -54,7 +55,7 @@ export const BeforeAfter: React.FC<{ onContactClick: () => void }> = ({ onContac
     {
       before: "/images/proof/2/before.png",
       after: "/images/proof/2/after.png",
-      caption: "Urban garden rejuvenation: focused on native Brooklyn flora and modern lighting."
+      caption: `Urban garden rejuvenation: focused on native ${BUSINESS_AREA} flora and modern lighting.`
     },
     {
       before: "/images/proof/3/before.png",
@@ -77,15 +78,15 @@ export const BeforeAfter: React.FC<{ onContactClick: () => void }> = ({ onContac
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">Real Yards. <span className="text-emerald-600">Real Results.</span></h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Slide the white bar to see the direct transformation of actual properties across Brooklyn.
+            Slide the white bar to see the direct transformation of actual properties across {BUSINESS_AREA}.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
           {projects.map((p, i) => <Slider key={i} {...p} />)}
         </div>
-        
+
         <div className="mt-20 text-center">
-          <button 
+          <button
             onClick={onContactClick}
             className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl shadow-emerald-100 hover:scale-105"
           >

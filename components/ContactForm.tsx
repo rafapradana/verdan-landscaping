@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { BUSINESS_NAME } from '../constants';
+import { BUSINESS_NAME, BUSINESS_AREA } from '../constants';
 
 export const ContactForm: React.FC<{ isModal?: boolean; onClose?: () => void }> = ({ isModal, onClose }) => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
@@ -55,7 +55,7 @@ export const ContactForm: React.FC<{ isModal?: boolean; onClose?: () => void }> 
 
               <div className="relative z-10">
                 <div className="inline-block bg-emerald-800 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 border border-emerald-700/50">
-                  Brooklyn's Best
+                  {BUSINESS_AREA}'s Best
                 </div>
                 <h2 className="text-4xl xl:text-5xl font-bold mb-8 leading-tight tracking-tight">Let's Build Your <span className="text-emerald-400 italic">Urban Oasis.</span></h2>
                 <p className="text-emerald-100/70 mb-12 text-lg leading-relaxed max-w-md">
@@ -78,7 +78,7 @@ export const ContactForm: React.FC<{ isModal?: boolean; onClose?: () => void }> 
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Risk-Free Quote</h4>
-                      <p className="text-sm text-emerald-100/50 leading-snug mt-1">Transparent, fixed pricing. No hidden fees or "Brooklyn surcharges."</p>
+                      <p className="text-sm text-emerald-100/50 leading-snug mt-1">Transparent, fixed pricing. No hidden fees or "{BUSINESS_AREA} surcharges."</p>
                     </div>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export const ContactForm: React.FC<{ isModal?: boolean; onClose?: () => void }> 
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] ml-1">Brooklyn Neighborhood</label>
+                    <label className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] ml-1">{BUSINESS_AREA} Neighborhood</label>
                     <input
                       required
                       type="text"

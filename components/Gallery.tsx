@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { BUSINESS_AREA } from '../constants';
 
 interface ProjectImage {
   url: string;
@@ -38,7 +39,7 @@ export const Gallery: React.FC = () => {
     },
     {
       url: "/images/gallery/6.jpg",
-      title: "Brooklyn Heights Courtyard",
+      title: `${BUSINESS_AREA} Heights Courtyard`,
       category: "Townhouse Garden"
     }
   ];
@@ -87,15 +88,15 @@ export const Gallery: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={index}
               className="group cursor-pointer"
               onClick={() => openLightbox(index)}
             >
               {/* Image Container */}
               <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 mb-5">
-                <img 
-                  src={project.url} 
+                <img
+                  src={project.url}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
@@ -109,7 +110,7 @@ export const Gallery: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Visible Caption */}
               <div className="px-2">
                 <p className="text-emerald-600 text-[10px] font-black uppercase tracking-[0.2em] mb-1">
@@ -126,11 +127,11 @@ export const Gallery: React.FC = () => {
 
       {/* Lightbox Modal */}
       {selectedIndex !== null && (
-        <div 
+        <div
           className="fixed inset-0 z-[110] bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
           onClick={closeLightbox}
         >
-          <button 
+          <button
             onClick={closeLightbox}
             className="absolute top-8 right-8 z-[120] text-white/50 hover:text-white transition-colors"
           >
@@ -139,7 +140,7 @@ export const Gallery: React.FC = () => {
             </svg>
           </button>
 
-          <button 
+          <button
             onClick={prevImage}
             className="absolute left-4 md:left-8 z-[120] w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all backdrop-blur-sm"
           >
@@ -148,7 +149,7 @@ export const Gallery: React.FC = () => {
             </svg>
           </button>
 
-          <button 
+          <button
             onClick={nextImage}
             className="absolute right-4 md:right-8 z-[120] w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all backdrop-blur-sm"
           >
@@ -158,8 +159,8 @@ export const Gallery: React.FC = () => {
           </button>
 
           <div className="relative max-w-5xl w-full max-h-[80vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
-            <img 
-              src={projects[selectedIndex].url} 
+            <img
+              src={projects[selectedIndex].url}
               alt={projects[selectedIndex].title}
               className="max-w-full max-h-[70vh] object-contain rounded-2xl shadow-2xl animate-in zoom-in-95 duration-500"
             />

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BUSINESS_NAME } from '../constants';
+import { BUSINESS_NAME, BUSINESS_AREA } from '../constants';
 
 // Fix: Use React.FC to handle React internal props (like 'key') when mapping components
 const DifferentiatorCard: React.FC<{ icon: string, title: string, description: string }> = ({ icon, title, description }) => (
@@ -25,12 +25,12 @@ export const WhyChooseUs: React.FC<{ onContactClick: () => void }> = ({ onContac
     {
       icon: "🏙️",
       title: "Tailored for Urban Spaces",
-      description: "We're Brooklyn natives. We specialize in the logistics of small yards, narrow townhouses, and high-rise rooftops."
+      description: `We're ${BUSINESS_AREA} natives. We specialize in the logistics of small yards, narrow townhouses, and high-rise rooftops.`
     },
     {
       icon: "💎",
       title: "Clear Pricing, No Games",
-      description: "Transparent, line-item quotes. You'll know exactly what you're paying for before we ever pick up a shovel. No 'Brooklyn surcharges'."
+      description: `Transparent, line-item quotes. You'll know exactly what you're paying for before we ever pick up a shovel. No '${BUSINESS_AREA} surcharges'.`
     },
     {
       icon: "🌿",
@@ -48,7 +48,7 @@ export const WhyChooseUs: React.FC<{ onContactClick: () => void }> = ({ onContac
               The {BUSINESS_NAME} Difference
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.1]">
-              Why Brooklyn <span className="text-emerald-600">Chooses</span> {BUSINESS_NAME}
+              Why {BUSINESS_AREA} <span className="text-emerald-600">Chooses</span> {BUSINESS_NAME}
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               You shouldn't have to chase contractors or wonder if your yard is in good hands. We built {BUSINESS_NAME} to be the most professional landscaping partner in the borough.

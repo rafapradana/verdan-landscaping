@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BUSINESS_AREA } from '../constants';
 
 const StepCard: React.FC<{ num: string; title: string; text: string; icon: React.ReactNode }> = ({ num, title, text, icon }) => (
   <div className="relative p-8 rounded-[32px] bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all group">
@@ -21,7 +22,7 @@ export const HowItWorks: React.FC<{ onContactClick: () => void }> = ({ onContact
     {
       num: "01",
       title: "Tell us about your space",
-      text: "Fill out our quick contact form or give us a call. We'll discuss your goals and specific needs for your Brooklyn property.",
+      text: `Fill out our quick contact form or give us a call. We'll discuss your goals and specific needs for your ${BUSINESS_AREA} property.`,
       icon: "📱"
     },
     {
@@ -55,14 +56,14 @@ export const HowItWorks: React.FC<{ onContactClick: () => void }> = ({ onContact
             How It Works
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            We’ve streamlined our process to be as efficient and stress-free as possible, specifically for busy Brooklyn homeowners.
+            We’ve streamlined our process to be as efficient and stress-free as possible, specifically for busy {BUSINESS_AREA} homeowners.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           {/* Connector Line for Desktop */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-slate-200 -translate-y-1/2 z-0"></div>
-          
+
           {steps.map((step, idx) => (
             <StepCard key={idx} {...step} />
           ))}
@@ -73,7 +74,7 @@ export const HowItWorks: React.FC<{ onContactClick: () => void }> = ({ onContact
             <div className="px-6 py-3 flex items-center gap-4">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500"></span>
               <p className="text-sm font-medium text-slate-700">No hidden fees. No long calls. Just clear answers.</p>
-              <button 
+              <button
                 onClick={onContactClick}
                 className="text-emerald-600 font-bold text-sm hover:underline"
               >

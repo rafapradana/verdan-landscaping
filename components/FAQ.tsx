@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { BUSINESS_NAME } from '../constants';
+import { BUSINESS_NAME, BUSINESS_AREA } from '../constants';
 
 // Fix: Use React.FC to handle React internal props (like 'key') when mapping components
 const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, answer }) => {
@@ -33,7 +33,7 @@ const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, ans
 export const FAQ: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) => {
   const faqs = [
     {
-      question: "Do you handle debris removal for tight Brooklyn spaces?",
+      question: `Do you handle debris removal for tight ${BUSINESS_AREA} spaces?`,
       answer: "Absolutely. We specialize in urban logistics. Whether it's a brownstone with narrow hallway access or a rooftop garden, our crew manages all debris removal and ensures your space is spotless when we leave."
     },
     {
@@ -50,7 +50,7 @@ export const FAQ: React.FC<{ onContactClick: () => void }> = ({ onContactClick }
     },
     {
       question: "Do you offer organic or pet-safe treatments?",
-      answer: "Yes! We live in Brooklyn too, and we know how important pet safety is. We use eco-friendly, organic fertilizers and pest control methods upon request to keep your furry friends and the local environment safe."
+      answer: `Yes! We live in ${BUSINESS_AREA} too, and we know how important pet safety is. We use eco-friendly, organic fertilizers and pest control methods upon request to keep your furry friends and the local environment safe.`
     }
   ];
 

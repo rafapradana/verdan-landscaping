@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { BUSINESS_NAME } from './constants';
+import { BUSINESS_NAME, BUSINESS_AREA } from './constants';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProblemSolution } from './components/ProblemSolution';
@@ -67,7 +67,7 @@ const App: React.FC = () => {
   const closeContactModal = () => setIsContactModalOpen(false);
 
   useEffect(() => {
-    document.title = `${BUSINESS_NAME} Landscaping Co. | Brooklyn’s Modern Outdoor Experts`;
+    document.title = `${BUSINESS_NAME} Landscaping Co. | ${BUSINESS_AREA}’s Modern Outdoor Experts`;
 
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 800);
@@ -107,13 +107,13 @@ const App: React.FC = () => {
     {
       name: "Sarah K.",
       loc: "Cobble Hill",
-      content: "The level of professionalism was outstanding. They really understand how to work with small Brooklyn spaces.",
+      content: `The level of professionalism was outstanding. They really understand how to work with small ${BUSINESS_AREA} spaces.`,
       avatar: "https://i.pravatar.cc/150?u=sarah_bk"
     },
     {
       name: "David R.",
       loc: "Greenpoint",
-      content: "Transparent pricing from the start. No hidden fees or 'Brooklyn surcharges'. Just honest, high-quality landscaping.",
+      content: `Transparent pricing from the start. No hidden fees or '${BUSINESS_AREA} surcharges'. Just honest, high-quality landscaping.`,
       avatar: "https://i.pravatar.cc/150?u=david_bk"
     },
     {
@@ -173,7 +173,7 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-6xl font-bold text-slate-900 mb-4 tracking-tight">What Your Neighbors Say</h2>
-              <p className="text-lg text-slate-600 font-medium">Rated 4.9/5 stars across Brooklyn.</p>
+              <p className="text-lg text-slate-600 font-medium">Rated 4.9/5 stars across {BUSINESS_AREA}.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

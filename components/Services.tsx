@@ -1,25 +1,24 @@
 
 import React from 'react';
+import { BUSINESS_AREA } from '../constants';
 
 const ServiceCard = ({ title, desc, price, features, icon, isFeatured, onContactClick }: any) => (
-  <div className={`relative p-8 rounded-[40px] border transition-all duration-500 flex flex-col h-full ${
-    isFeatured 
-    ? 'bg-emerald-900 text-white border-emerald-800 shadow-2xl scale-105 z-10' 
-    : 'bg-white text-slate-900 border-slate-100 shadow-sm hover:shadow-xl'
-  }`}>
+  <div className={`relative p-8 rounded-[40px] border transition-all duration-500 flex flex-col h-full ${isFeatured
+      ? 'bg-emerald-900 text-white border-emerald-800 shadow-2xl scale-105 z-10'
+      : 'bg-white text-slate-900 border-slate-100 shadow-sm hover:shadow-xl'
+    }`}>
     {isFeatured && (
       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
         Most Popular
       </div>
     )}
-    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-8 ${
-      isFeatured ? 'bg-emerald-800' : 'bg-emerald-50'
-    }`}>
+    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-8 ${isFeatured ? 'bg-emerald-800' : 'bg-emerald-50'
+      }`}>
       {icon}
     </div>
     <h3 className="text-2xl font-bold mb-3">{title}</h3>
     <p className={`mb-8 text-sm flex-grow leading-relaxed ${isFeatured ? 'text-emerald-100/70' : 'text-slate-500'}`}>{desc}</p>
-    
+
     <div className="mb-8">
       <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isFeatured ? 'text-emerald-400' : 'text-slate-400'}`}>Starting at</p>
       <p className={`text-4xl font-bold ${isFeatured ? 'text-white' : 'text-emerald-600'}`}>{price}</p>
@@ -34,13 +33,12 @@ const ServiceCard = ({ title, desc, price, features, icon, isFeatured, onContact
       ))}
     </ul>
 
-    <button 
+    <button
       onClick={onContactClick}
-      className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${
-        isFeatured 
-        ? 'bg-white text-emerald-900 hover:bg-emerald-50 shadow-xl shadow-emerald-950/20' 
-        : 'bg-slate-50 hover:bg-emerald-50 text-slate-900 hover:text-emerald-700'
-      }`}
+      className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${isFeatured
+          ? 'bg-white text-emerald-900 hover:bg-emerald-50 shadow-xl shadow-emerald-950/20'
+          : 'bg-slate-50 hover:bg-emerald-50 text-slate-900 hover:text-emerald-700'
+        }`}
     >
       Request a Quote
     </button>
@@ -89,7 +87,7 @@ export const Services: React.FC<{ onContactClick: () => void }> = ({ onContactCl
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">Our Landscaping Solutions</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
-            Tailored specifically for the unique architectural constraints of Brooklyn properties.
+            Tailored specifically for the unique architectural constraints of {BUSINESS_AREA} properties.
           </p>
         </div>
 

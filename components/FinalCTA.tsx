@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BUSINESS_AREA } from '../constants';
 
 export const FinalCTA: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) => {
   return (
@@ -9,16 +10,16 @@ export const FinalCTA: React.FC<{ onContactClick: () => void }> = ({ onContactCl
           {/* Decorative Elements */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-800 rounded-full -ml-32 -mt-32 opacity-20"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-800 rounded-full -mr-48 -mb-48 opacity-20"></div>
-          
+
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-none">
               Ready to Upgrade Your <span className="text-emerald-400">Outdoor Space?</span>
             </h2>
             <p className="text-xl text-emerald-100/70 mb-12 leading-relaxed">
-              Join hundreds of Brooklyn homeowners who stopped stressing and started enjoying their yards. We're ready when you are.
+              Join hundreds of {BUSINESS_AREA} homeowners who stopped stressing and started enjoying their yards. We're ready when you are.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button 
+              <button
                 onClick={onContactClick}
                 className="w-full sm:w-auto bg-white text-emerald-900 px-12 py-6 rounded-3xl font-bold text-xl hover:bg-emerald-50 transition-all shadow-xl hover:scale-[1.05] active:scale-95"
               >
