@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BUSINESS_NAME } from '../constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ export const Footer: React.FC = () => {
                 V
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900">
-                Verdan<span className="text-emerald-600">.</span>
+                {BUSINESS_NAME}<span className="text-emerald-600">.</span>
               </span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
@@ -69,7 +70,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-10 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400 font-medium">
-          <p>© 2024 Verdan Landscaping Co. All rights reserved.</p>
+          <p>© 2024 {BUSINESS_NAME} Landscaping Co. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-emerald-600 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-emerald-600 transition-colors">Terms of Service</a>

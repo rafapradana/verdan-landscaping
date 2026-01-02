@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { BUSINESS_NAME } from '../constants';
 
 export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,11 +19,10 @@ export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClic
       <div className="bg-emerald-900 text-emerald-100 py-2 px-6 text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
         📅 Now Booking Spring Cleanups — <span className="text-amber-400">Only 4 slots left for April</span>
       </div>
-      
-      <header 
-        className={`transition-all duration-300 ${
-          isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-white/50 backdrop-blur-sm py-5'
-        }`}
+
+      <header
+        className={`transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-white/50 backdrop-blur-sm py-5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -30,7 +30,7 @@ export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClic
               V
             </div>
             <span className={`text-xl font-bold tracking-tight text-slate-900`}>
-              Verdan<span className="text-emerald-600">.</span>
+              {BUSINESS_NAME}<span className="text-emerald-600">.</span>
             </span>
           </div>
 
@@ -49,7 +49,7 @@ export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClic
               </span>
               (718) 555-0192
             </a>
-            <button 
+            <button
               onClick={onContactClick}
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-2xl text-sm font-bold transition-all shadow-xl shadow-emerald-200 hover:scale-[1.02] active:scale-95"
             >

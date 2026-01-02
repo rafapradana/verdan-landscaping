@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BUSINESS_NAME } from '../constants';
 
 export const ProblemSolution: React.FC = () => {
   const painPoints = [
@@ -33,9 +34,9 @@ export const ProblemSolution: React.FC = () => {
         <div className="bg-emerald-900 text-white p-8 md:p-12 rounded-[32px] text-center relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-800 rounded-full -mr-16 -mt-16 opacity-50"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-800 rounded-full -ml-12 -mb-12 opacity-50"></div>
-          
+
           <h3 className="text-2xl md:text-3xl font-bold mb-6 leading-tight relative z-10">
-            Verdan handles design, build, and maintenance — so your outdoor space stays clean, functional, and valuable year-round.
+            {BUSINESS_NAME} handles design, build, and maintenance — so your outdoor space stays clean, functional, and valuable year-round.
           </h3>
           <p className="text-emerald-100 text-lg opacity-80 relative z-10">
             From seasonal cleanups to total backyard transformations.

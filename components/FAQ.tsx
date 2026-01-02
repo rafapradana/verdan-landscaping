@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { BUSINESS_NAME } from '../constants';
 
 // Fix: Use React.FC to handle React internal props (like 'key') when mapping components
 const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, answer }) => {
@@ -58,7 +59,7 @@ export const FAQ: React.FC<{ onContactClick: () => void }> = ({ onContactClick }
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Frequently Asked Questions</h2>
-          <p className="text-lg text-slate-600">Everything you need to know about working with Verdan.</p>
+          <p className="text-lg text-slate-600">Everything you need to know about working with {BUSINESS_NAME}.</p>
         </div>
         <div className="bg-slate-50 rounded-[40px] p-8 md:p-12 border border-slate-100">
           {faqs.map((faq, index) => (
@@ -67,11 +68,11 @@ export const FAQ: React.FC<{ onContactClick: () => void }> = ({ onContactClick }
         </div>
         <div className="mt-12 text-center">
           <p className="text-slate-500 mb-6">Have a different question?</p>
-          <button 
+          <button
             onClick={onContactClick}
             className="inline-flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all"
           >
-            Contact our team directly 
+            Contact our team directly
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

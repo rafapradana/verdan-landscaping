@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BUSINESS_NAME } from '../constants';
 
 // Fix: Use React.FC to handle React internal props (like 'key') when mapping components
 const DifferentiatorCard: React.FC<{ icon: string, title: string, description: string }> = ({ icon, title, description }) => (
@@ -44,13 +45,13 @@ export const WhyChooseUs: React.FC<{ onContactClick: () => void }> = ({ onContac
         <div className="grid lg:grid-cols-3 gap-16 items-start">
           <div className="lg:col-span-1 lg:sticky lg:top-32">
             <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-              The Verdan Difference
+              The {BUSINESS_NAME} Difference
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.1]">
-              Why Brooklyn <span className="text-emerald-600">Chooses</span> Verdan
+              Why Brooklyn <span className="text-emerald-600">Chooses</span> {BUSINESS_NAME}
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              You shouldn't have to chase contractors or wonder if your yard is in good hands. We built Verdan to be the most professional landscaping partner in the borough.
+              You shouldn't have to chase contractors or wonder if your yard is in good hands. We built {BUSINESS_NAME} to be the most professional landscaping partner in the borough.
             </p>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
@@ -63,7 +64,7 @@ export const WhyChooseUs: React.FC<{ onContactClick: () => void }> = ({ onContac
               </div>
             </div>
             <div className="mt-10">
-              <button 
+              <button
                 onClick={onContactClick}
                 className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-lg"
               >
@@ -72,12 +73,12 @@ export const WhyChooseUs: React.FC<{ onContactClick: () => void }> = ({ onContac
               </button>
             </div>
           </div>
-          
+
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
             {differentiators.map((item, idx) => (
               <DifferentiatorCard key={idx} {...item} />
             ))}
-            
+
             {/* Callout Card */}
             <div className="sm:col-span-2 bg-emerald-900 p-8 rounded-[40px] text-white flex flex-col md:flex-row items-center justify-between gap-8 mt-4 overflow-hidden relative">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-800 rounded-full -mr-16 -mt-16 opacity-30"></div>
