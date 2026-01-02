@@ -45,8 +45,13 @@ const Slider: React.FC<{ before: string; after: string; caption: string }> = ({ 
   );
 };
 
-export const BeforeAfter: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) => {
-  const projects = [
+interface BeforeAfterProps {
+  onContactClick: () => void;
+  items?: { before_img: string; after_img: string; caption: string }[];
+}
+
+export const BeforeAfter: React.FC<BeforeAfterProps> = ({ onContactClick, items }) => {
+  const defaultProjects = [
     {
       before: "/images/proof/1/before.png",
       after: "/images/proof/1/after.png",
@@ -68,6 +73,10 @@ export const BeforeAfter: React.FC<{ onContactClick: () => void }> = ({ onContac
       caption: "Small townhouse patio makeover: maximized a tight layout with tiered bluestone and privacy screens."
     }
   ];
+
+  const projects = items && items.length > 0
+    ? items.map(i => ({ before: i.before_img, after: i.after_img, caption: i.caption }))
+    : defaultProjects;
 
   return (
     <section id="projects" className="py-24 bg-white">

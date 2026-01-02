@@ -30,8 +30,13 @@ const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, ans
   );
 };
 
-export const FAQ: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) => {
-  const faqs = [
+interface FAQProps {
+  onContactClick: () => void;
+  items?: { question: string; answer: string }[];
+}
+
+export const FAQ: React.FC<FAQProps> = ({ onContactClick, items }) => {
+  const defaultFaqs = [
     {
       question: `Do you handle debris removal for tight ${BUSINESS_AREA} spaces?`,
       answer: "Absolutely. We specialize in urban logistics. Whether it's a brownstone with narrow hallway access or a rooftop garden, our crew manages all debris removal and ensures your space is spotless when we leave."
@@ -53,6 +58,8 @@ export const FAQ: React.FC<{ onContactClick: () => void }> = ({ onContactClick }
       answer: `Yes! We live in ${BUSINESS_AREA} too, and we know how important pet safety is. We use eco-friendly, organic fertilizers and pest control methods upon request to keep your furry friends and the local environment safe.`
     }
   ];
+
+  const faqs = items && items.length > 0 ? items : defaultFaqs;
 
   return (
     <section id="faq" className="py-24 bg-white">

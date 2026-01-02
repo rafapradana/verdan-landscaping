@@ -2,7 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { BUSINESS_NAME } from '../constants';
 
-export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) => {
+interface HeaderProps {
+  onContactClick: () => void;
+  phone?: string;
+  bannerText?: string;
+  bannerActive?: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onContactClick, phone, bannerText, bannerActive }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,9 +23,11 @@ export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClic
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* Urgency Banner */}
-      <div className="bg-emerald-900 text-emerald-100 py-2 px-6 text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
-        📅 Now Booking Spring Cleanups — <span className="text-amber-400">Only 4 slots left for April</span>
-      </div>
+      {bannerActive && (
+        <div className="bg-emerald-900 text-emerald-100 py-2 px-6 text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
+          {bannerText || <span>📅 Now Booking Spring Cleanups — <span className="text-amber-400">Only 4 slots left for April</span></span>}
+        </div>
+      )}
 
       <header
         className={`transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-white/50 backdrop-blur-sm py-5'
@@ -47,7 +56,7 @@ export const Header: React.FC<{ onContactClick: () => void }> = ({ onContactClic
               <span className="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 005.47 5.47l.772-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
               </span>
-              (718) 555-0192
+              {phone || "(718) 555-0192"}
             </a>
             <button
               onClick={onContactClick}

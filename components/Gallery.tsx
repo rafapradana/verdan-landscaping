@@ -8,10 +8,14 @@ interface ProjectImage {
   category: string;
 }
 
-export const Gallery: React.FC = () => {
+interface GalleryProps {
+  items?: ProjectImage[];
+}
+
+export const Gallery: React.FC<GalleryProps> = ({ items }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const projects: ProjectImage[] = [
+  const defaultProjects: ProjectImage[] = [
     {
       url: "/images/gallery/1.jpg",
       title: "Cobble Hill Garden",
@@ -43,6 +47,8 @@ export const Gallery: React.FC = () => {
       category: "Townhouse Garden"
     }
   ];
+
+  const projects = items && items.length > 0 ? items : defaultProjects;
 
   const openLightbox = (index: number) => setSelectedIndex(index);
   const closeLightbox = () => setSelectedIndex(null);
